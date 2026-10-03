@@ -57,7 +57,7 @@ ReWear is a web-based platform that enables users to exchange unused clothing th
 1. Clone the repository:
 ```bash
 git clone [repository-url]
-cd Rewear
+cd Great Wear
 ```
 
 2. Install dependencies:
@@ -92,6 +92,18 @@ pnpm dev
 ```
 
 The application will be available at `http://localhost:5173`
+
+### Seed Clothing Items
+
+The repository includes 12 approved sample listings in `scripts/seedItems.js`. Install dependencies first, then authenticate the Firebase Admin SDK with either a service-account JSON value or a service-account file:
+
+```bash
+pnpm install
+set FIREBASE_SERVICE_ACCOUNT={...}
+pnpm seed:items
+```
+
+On macOS/Linux, use `export FIREBASE_SERVICE_ACCOUNT='{"project_id":"..."}'` instead. To use a file instead, set `GOOGLE_APPLICATION_CREDENTIALS` to its path. The optional `SEED_UPLOADER_ID`, `SEED_UPLOADER_NAME`, and `SEED_UPLOADER_EMAIL` variables control the uploader metadata written to each item.
 
 ### Firebase Setup
 
